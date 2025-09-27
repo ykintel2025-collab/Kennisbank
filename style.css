@@ -1,107 +1,149 @@
+/* === EXCLUPOWER STYLING V2.0 - Professioneel & Merk-specifiek === */
+
+/* --- Basis & Typografie --- */
 body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    line-height: 1.6;
-    background-color: #f8f9fa;
+    /* Gebruik een iets zachtere achtergrond voor een premium gevoel */
+    background-color: #f7faff; 
     color: #333;
+    font-family: 'Poppins', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.7;
     margin: 0;
     padding: 20px;
+    -webkit-font-smoothing: antialiased; /* Voor scherpere tekst */
+    -moz-osx-font-smoothing: grayscale;
 }
+
+/* Importeer het 'Poppins' lettertype voor een moderne look (optioneel maar aanbevolen) */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+/* --- Algemene Container --- */
 .kennisbank-container {
     max-width: 1200px;
-    margin: 0 auto;
-    background-color: #fff;
-    padding: 20px 30px;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    margin: 20px auto;
+    background-color: #ffffff;
+    border-radius: 16px; /* Iets rondere hoeken, passend bij je site */
+    box-shadow: 0 8px 30px rgba(0, 123, 255, 0.1);
+    border: 1px solid #eaf0f6;
+    padding: 25px 40px;
 }
+
+/* --- Header Sectie --- */
 .kennisbank-header {
     text-align: center;
-    padding-bottom: 20px;
-    border-bottom: 1px solid #ddd;
-    margin-bottom: 40px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid #eaf0f6;
+    margin-bottom: 50px;
 }
+
 .kennisbank-header h1 {
-    font-size: 2.8em;
-    color: #1a2c4e;
+    font-size: 3em; /* Groter en krachtiger */
+    font-weight: 700;
+    color: #1a2c4e; /* Donkerblauw voor contrast */
+    margin-bottom: 10px;
+    /* Subtiel verloop in de titel voor een grafisch effect */
+    background: linear-gradient(45deg, #1a2c4e, #007bff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
+
 .kennisbank-header p {
-    font-size: 1.2em;
-    color: #666;
+    font-size: 1.25em;
+    color: #5a6a85; /* Zachter grijsblauw */
+    max-width: 700px;
+    margin: 0 auto;
 }
-.search-bar { 
-    /* Stijl blijft behouden voor als we de zoekbalk weer activeren */
-    position: relative;
-    width: 60%;
-    margin: 20px auto 0 auto;
-}
-.search-bar input {
-    width: 100%;
-    padding: 15px 20px 15px 50px;
-    border-radius: 30px;
-    border: 1px solid #ddd;
-    font-size: 1em;
-}
-.search-bar i {
-    position: absolute;
-    left: 20px;
-    top: 50%;
-    transform: translateY(-50%);
-    color: #aaa;
-}
+
+/* De zoekbalk verbergen we nog steeds, maar mocht je hem aanzetten, is hij mooi gestyled */
+.search-bar { display: none; }
+
+/* --- Pijler & Kaart Layout --- */
 .grid-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
     gap: 30px;
 }
+
 .content-pillar {
-    background-color: #fff;
-    border: 1px solid #e9ecef;
-    border-radius: 8px;
-    padding: 25px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    background-color: #ffffff;
+    border: 1px solid #eaf0f6;
+    border-radius: 12px;
+    padding: 30px;
+    /* Subtiele animatie voor een levendig effect */
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    box-shadow: 0 4px 15px rgba(0, 123, 255, 0.05);
 }
+
+/* Grafisch element: maak de kaart groter en geef een gloed bij hover */
+.content-pillar:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 30px rgba(0, 123, 255, 0.15);
+    border-color: #007bff;
+}
+
 .content-pillar h2 {
-    font-size: 1.5em;
+    font-size: 1.6em;
+    font-weight: 600;
     color: #1a2c4e;
-    padding-bottom: 10px;
-    border-bottom: 2px solid #007bff;
+    padding-bottom: 15px;
+    border-bottom: 2px solid #007bff; /* Strakke blauwe lijn */
     margin-top: 0;
+    margin-bottom: 25px;
     display: flex;
     align-items: center;
 }
+
 .content-pillar h2 i {
-    margin-right: 12px;
+    color: #007bff; /* Icoon in de titel de primaire blauwe kleur */
+    margin-right: 15px;
 }
+
+/* --- Lijst met Links Styling --- */
 .content-pillar ul {
     list-style: none;
     padding: 0;
-    margin: 20px 0 0 0;
+    margin: 0;
 }
+
 .content-pillar li {
-    margin-bottom: 12px;
+    margin-bottom: 10px;
 }
+
 .content-pillar a {
     text-decoration: none;
-    color: #0056b3;
+    color: #1a2c4e; /* Donkerblauw voor betere leesbaarheid */
     font-weight: 500;
     display: flex;
     align-items: center;
-    transition: all 0.2s ease;
-    padding: 4px 0;
+    padding: 8px 10px;
+    border-radius: 8px; /* Afgeronde hoeken voor de links */
+    transition: all 0.2s ease-in-out;
 }
+
+/* Grafisch element: maak de hele link een 'knop' bij hover */
 .content-pillar a:hover {
-    color: #007bff;
-    padding-left: 5px;
+    background-color: #f0f7ff; /* Zeer lichte blauwe achtergrond */
+    color: #007bff; /* Tekst wordt helderblauw */
+    padding-left: 15px; /* Tekst schuift iets op voor dynamiek */
+    transform: translateX(5px);
 }
+
 .content-pillar a i {
-    margin-right: 10px;
-    color: #007bff;
-    width: 20px;
+    color: #8c9db5; /* Iconen standaard een neutrale kleur */
+    width: 25px;
     text-align: center;
+    margin-right: 12px;
+    transition: color 0.2s ease-in-out;
 }
+
+.content-pillar a:hover i {
+    color: #007bff; /* Icoon wordt ook blauw bij hover */
+}
+
+/* --- Laad- en foutmeldingen --- */
 .loading-message, .no-results {
     text-align: center;
-    padding: 40px;
+    padding: 50px;
+    font-size: 1.1em;
     font-style: italic;
     color: #777;
 }
