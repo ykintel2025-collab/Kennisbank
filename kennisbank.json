@@ -1,1 +1,28 @@
-
+[
+    {
+        "sectie_titel": "De Basis van Energieopslag",
+        "vragen": [
+            {
+                "vraag": "Wat is een thuisbatterij en hoe werkt het?",
+                "antwoord": "<p>Een thuisbatterij, ook wel thuisaccu genoemd, is een systeem dat elektriciteit opslaat voor later gebruik. Het werkt als een oplaadbare batterij voor uw woning.</p><p>Het proces is eenvoudig:</p><ol><li><strong>Opladen:</strong> Overdag wekken uw zonnepanelen stroom op. Als er meer stroom wordt opgewekt dan u op dat moment verbruikt, wordt dit overschot opgeslagen in de thuisbatterij.</li><li><strong>Opslag:</strong> De batterij bewaart deze energie totdat u deze nodig heeft.</li><li><strong>Ontladen:</strong> 's Avonds, als de zon onder is, schakelt het systeem automatisch over op de opgeslagen energie uit de batterij om uw huis van stroom te voorzien.</li></ol><p>Hierdoor gebruikt u veel meer van uw eigen opgewekte zonne-energie. Dit wordt het <strong>verhogen van de zelfconsumptie</strong> genoemd.</p>"
+            },
+            {
+                "vraag": "De voordelen van een thuisbatterij op een rij",
+                "antwoord": "<ul><li><strong>Hogere Zelfconsumptie:</strong> U gebruikt tot wel 70-80% van uw eigen zonnestroom.</li><li><strong>Lagere Energierekening:</strong> U hoeft minder dure stroom van het net te kopen.</li><li><strong>Onafhankelijkheid:</strong> U bent minder afhankelijk van energieleveranciers en schommelende prijzen.</li><li><strong>Voorbereid op de Toekomst:</strong> Een perfecte oplossing voor de afbouw van de salderingsregeling.</li><li><strong>Netstabiliteit:</strong> U helpt het elektriciteitsnet te stabiliseren.</li></ul>"
+            }
+        ]
+    },
+    {
+        "sectie_titel": "Is een Thuisbatterij Iets voor Mij?",
+        "vragen": [
+            {
+                "vraag": "Welke capaciteit (kWh) heb ik nodig?",
+                "antwoord": "<p>De juiste capaciteit hangt af van uw energieverbruik en de opbrengst van uw zonnepanelen. Een vuistregel is om 1 tot 1,5 kWh batterijcapaciteit per 1.000 kWh jaarlijks energieverbruik te rekenen. Onze adviseurs maken altijd een berekening op maat voor uw situatie.</p>"
+            },
+            {
+                "vraag": "Wanneer is een thuisbatterij rendabel? (Terugverdientijd)",
+                "antwoord": "<p>Met de afbouw van de salderingsregeling wordt de businesscase steeds sterker. De terugverdientijd hangt af van de energieprijzen, de aanschafprijs en de mate van salderen. Gemiddeld ligt de terugverdientijd tussen de 8 en 12 jaar. Aangezien een moderne batterij 15-20 jaar meegaat, levert deze na de terugverdientijd pure winst op.</p>"
+            }
+        ]
+    }
+]
