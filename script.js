@@ -1,10 +1,10 @@
 document.addEventListener('DOMContentLoaded', function () {
     const contentContainer = document.getElementById('kennisbank-content');
-    const searchInput = document.getElementById('searchInput');
-    const noResultsMessage = document.getElementById('noResults');
+    const searchInput = document.getElementById('searchInput'); // Behoud voor toekomstig gebruik
+    const noResultsMessage = document.getElementById('noResults'); // Behoud voor toekomstig gebruik
 
-    // Functie om de kennisbank-data te laden en de HTML op te bouwen
-    async function laadKennisbank() {
+    // Functie om de blauwdruk-data te laden en de HTML op te bouwen
+    async function laadBlauwdruk() {
         try {
             const response = await fetch('kennisbank.json');
             if (!response.ok) {
@@ -12,57 +12,40 @@ document.addEventListener('DOMContentLoaded', function () {
             }
             const data = await response.json();
             
-            let html = '';
-            data.forEach(sectie => {
-                html += `<div class="kennisbank-section">`;
-                html += `<h2>${sectie.sectie_titel}</h2>`;
-                sectie.vragen.forEach(item => {
+            let html = '<div class="grid-container">';
+            data.pijlers.forEach(pijler => {
+                html += `
+                    <div class="content-pillar">
+                        <h2><i class="${pijler.icoon}"></i> ${pijler.titel}</h2>
+                        <ul>
+                `;
+                pijler.links.forEach(link => {
                     html += `
-                        <details class="accordion-item">
-                            <summary>${item.vraag}</summary>
-                            <div class="accordion-content">${item.antwoord}</div>
-                        </details>
+                        <li>
+                            <a href="${link.url}">
+                                <i class="${link.icoon}"></i> ${link.tekst}
+                            </a>
+                        </li>
                     `;
                 });
-                html += `</div>`;
+                html += `
+                        </ul>
+                    </div>
+                `;
             });
+            html += '</div>';
             contentContainer.innerHTML = html;
-            
-            // Activeer de zoekfunctie nadat de content geladen is
-            activeerZoekfunctie();
 
         } catch (error) {
-            contentContainer.innerHTML = `<p class="loading-message">Fout bij het laden van de kennisbank. Probeer het later opnieuw.</p>`;
+            contentContainer.innerHTML = `<p class="loading-message">Fout bij het laden van de kennisbank structuur. Probeer het later opnieuw.</p>`;
             console.error("Fetch error:", error);
         }
     }
 
-    // Functie voor de zoekbalk
-    function activeerZoekfunctie() {
-        const accordionItems = document.querySelectorAll('.accordion-item');
-        const sections = document.querySelectorAll('.kennisbank-section');
-
-        searchInput.addEventListener('keyup', function (e) {
-            const query = e.target.value.toLowerCase().trim();
-            let hasResults = false;
-
-            accordionItems.forEach(item => {
-                const question = item.querySelector('summary').textContent.toLowerCase();
-                const answer = item.querySelector('.accordion-content').textContent.toLowerCase();
-                const isMatch = question.includes(query) || answer.includes(query);
-                item.classList.toggle('hidden', !isMatch);
-                if(isMatch) hasResults = true;
-            });
-
-            sections.forEach(section => {
-                const visibleItems = section.querySelectorAll('.accordion-item:not(.hidden)');
-                section.style.display = visibleItems.length > 0 ? '' : 'none';
-            });
-            
-            noResultsMessage.style.display = hasResults ? 'none' : 'block';
-        });
-    }
+    // De zoekfunctie is nu niet actief, omdat we links tonen ipv content.
+    // Deze kan later worden aangepast om de links te filteren.
+    searchInput.style.display = 'none'; // We verbergen de zoekbalk tijdelijk
 
     // Start het proces
-    laadKennisbank();
+    laadBlauwdruk();
 });
