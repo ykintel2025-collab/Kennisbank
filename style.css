@@ -1,149 +1,156 @@
-/* === EXCLUPOWER STYLING V2.0 - Professioneel & Merk-specifiek === */
-
-/* --- Basis & Typografie --- */
+/* === ALGEMENE STYLING === */
+:root {
+    --primary-blue: #007bff;
+    --dark-blue: #1a2c4e;
+    --light-blue: #f4f8ff;
+    --text-color: #333;
+    --text-muted: #6c757d;
+    --border-color: #eaf0f6;
+}
 body {
-    /* Gebruik een iets zachtere achtergrond voor een premium gevoel */
-    background-color: #f7faff; 
-    color: #333;
-    font-family: 'Poppins', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    line-height: 1.7;
+    font-family: 'Poppins', sans-serif;
+    background-color: #f8f9fa;
+    color: var(--text-color);
     margin: 0;
-    padding: 20px;
-    -webkit-font-smoothing: antialiased; /* Voor scherpere tekst */
-    -moz-osx-font-smoothing: grayscale;
+    line-height: 1.7;
 }
-
-/* Importeer het 'Poppins' lettertype voor een moderne look (optioneel maar aanbevolen) */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
-
-/* --- Algemene Container --- */
-.kennisbank-container {
+.container {
     max-width: 1200px;
-    margin: 20px auto;
-    background-color: #ffffff;
-    border-radius: 16px; /* Iets rondere hoeken, passend bij je site */
-    box-shadow: 0 8px 30px rgba(0, 123, 255, 0.1);
-    border: 1px solid #eaf0f6;
-    padding: 25px 40px;
-}
-
-/* --- Header Sectie --- */
-.kennisbank-header {
-    text-align: center;
-    padding-bottom: 30px;
-    border-bottom: 1px solid #eaf0f6;
-    margin-bottom: 50px;
-}
-
-.kennisbank-header h1 {
-    font-size: 3em; /* Groter en krachtiger */
-    font-weight: 700;
-    color: #1a2c4e; /* Donkerblauw voor contrast */
-    margin-bottom: 10px;
-    /* Subtiel verloop in de titel voor een grafisch effect */
-    background: linear-gradient(45deg, #1a2c4e, #007bff);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-
-.kennisbank-header p {
-    font-size: 1.25em;
-    color: #5a6a85; /* Zachter grijsblauw */
-    max-width: 700px;
     margin: 0 auto;
+    padding: 0 20px;
+}
+a { text-decoration: none; color: var(--primary-blue); }
+
+/* === HEADER SECTIE (HERO) === */
+.hero-header {
+    background: linear-gradient(45deg, var(--dark-blue), var(--primary-blue));
+    color: #fff;
+    padding: 80px 0;
+    text-align: center;
+}
+.hero-header h1 {
+    font-size: 3.5em;
+    font-weight: 700;
+    margin: 0 0 15px 0;
+    letter-spacing: -1px;
+}
+.hero-header p {
+    font-size: 1.25em;
+    max-width: 700px;
+    margin: 0 auto 30px auto;
+    opacity: 0.9;
+}
+.cta-button {
+    background-color: #fff;
+    color: var(--primary-blue);
+    padding: 15px 35px;
+    border-radius: 30px;
+    font-weight: 600;
+    font-size: 1.1em;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+.cta-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
 }
 
-/* De zoekbalk verbergen we nog steeds, maar mocht je hem aanzetten, is hij mooi gestyled */
-.search-bar { display: none; }
+/* === SECTIE STYLING === */
+.section { padding: 80px 0; }
+.section-title {
+    text-align: center;
+    font-size: 2.8em;
+    font-weight: 700;
+    color: var(--dark-blue);
+    margin-bottom: 15px;
+}
+.section-subtitle {
+    text-align: center;
+    font-size: 1.15em;
+    color: var(--text-muted);
+    margin: 0 auto 60px auto;
+    max-width: 750px;
+}
 
-/* --- Pijler & Kaart Layout --- */
+/* === KENNISBANK GRID === */
 .grid-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
     gap: 30px;
 }
-
 .content-pillar {
-    background-color: #ffffff;
-    border: 1px solid #eaf0f6;
+    background-color: #fff;
     border-radius: 12px;
     padding: 30px;
-    /* Subtiele animatie voor een levendig effect */
-    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-    box-shadow: 0 4px 15px rgba(0, 123, 255, 0.05);
+    border: 1px solid var(--border-color);
+    transition: all 0.3s ease;
 }
-
-/* Grafisch element: maak de kaart groter en geef een gloed bij hover */
 .content-pillar:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 10px 30px rgba(0, 123, 255, 0.15);
-    border-color: #007bff;
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 123, 255, 0.1);
 }
-
 .content-pillar h2 {
     font-size: 1.6em;
     font-weight: 600;
-    color: #1a2c4e;
-    padding-bottom: 15px;
-    border-bottom: 2px solid #007bff; /* Strakke blauwe lijn */
-    margin-top: 0;
-    margin-bottom: 25px;
+    color: var(--dark-blue);
+    margin: 0 0 20px 0;
     display: flex;
     align-items: center;
 }
-
-.content-pillar h2 i {
-    color: #007bff; /* Icoon in de titel de primaire blauwe kleur */
+.content-pillar h2 .fa-solid {
+    color: var(--primary-blue);
     margin-right: 15px;
+    font-size: 0.9em;
 }
-
-/* --- Lijst met Links Styling --- */
 .content-pillar ul {
     list-style: none;
     padding: 0;
     margin: 0;
 }
+.content-pillar li { margin-bottom: 12px; }
+.content-pillar a {
+    color: var(--text-color);
+    font-weight: 500;
+    display: block;
+    padding: 8px 12px;
+    border-radius: 8px;
+    transition: all 0.2s ease-in-out;
+}
+.content-pillar a:hover {
+    background-color: var(--light-blue);
+    color: var(--primary-blue);
+    padding-left: 18px;
+}
+.content-pillar a::before {
+    content: '›';
+    margin-right: 10px;
+    font-weight: bold;
+    color: var(--primary-blue);
+}
 
-.content-pillar li {
+/* === WAAROM EXCLUPOWER SECTIE === */
+.why-us-section { background-color: #fff; }
+.feature-card {
+    text-align: center;
+    padding: 20px;
+}
+.feature-card .icon {
+    font-size: 3em;
+    color: var(--primary-blue);
+    margin-bottom: 20px;
+}
+.feature-card h3 {
+    font-size: 1.4em;
+    color: var(--dark-blue);
     margin-bottom: 10px;
 }
 
-.content-pillar a {
-    text-decoration: none;
-    color: #1a2c4e; /* Donkerblauw voor betere leesbaarheid */
-    font-weight: 500;
-    display: flex;
-    align-items: center;
-    padding: 8px 10px;
-    border-radius: 8px; /* Afgeronde hoeken voor de links */
-    transition: all 0.2s ease-in-out;
-}
-
-/* Grafisch element: maak de hele link een 'knop' bij hover */
-.content-pillar a:hover {
-    background-color: #f0f7ff; /* Zeer lichte blauwe achtergrond */
-    color: #007bff; /* Tekst wordt helderblauw */
-    padding-left: 15px; /* Tekst schuift iets op voor dynamiek */
-    transform: translateX(5px);
-}
-
-.content-pillar a i {
-    color: #8c9db5; /* Iconen standaard een neutrale kleur */
-    width: 25px;
+/* === FOOTER === */
+.main-footer {
+    background-color: var(--dark-blue);
+    color: #fff;
+    padding: 60px 0 30px 0;
     text-align: center;
-    margin-right: 12px;
-    transition: color 0.2s ease-in-out;
 }
-
-.content-pillar a:hover i {
-    color: #007bff; /* Icoon wordt ook blauw bij hover */
-}
-
-/* --- Laad- en foutmeldingen --- */
-.loading-message, .no-results {
-    text-align: center;
-    padding: 50px;
-    font-size: 1.1em;
-    font-style: italic;
-    color: #777;
-}
+.main-footer .logo { font-size: 1.8em; font-weight: 700; margin-bottom: 20px; }
+.main-footer p { opacity: 0.7; }
