@@ -1,156 +1,233 @@
-/* === ALGEMENE STYLING === */
+/* === EXCLUPOWER BRANDED STYLING V2.0 === */
+/* Ontworpen voor een professionele, moderne en merk-specifieke uitstraling */
+
+/* --- Algemene Stijlen & Variabelen --- */
 :root {
+    /* Kleuren direct van Exclupower.nl */
     --primary-blue: #007bff;
-    --dark-blue: #1a2c4e;
-    --light-blue: #f4f8ff;
-    --text-color: #333;
+    --dark-blue: #0a254a; /* Donkerder blauw voor tekst en achtergronden */
+    --light-gray: #f8f9fa;
+    --border-color: #dee2e6;
+    --text-color: #343a40;
     --text-muted: #6c757d;
-    --border-color: #eaf0f6;
 }
+
 body {
-    font-family: 'Poppins', sans-serif;
-    background-color: #f8f9fa;
+    font-family: 'Poppins', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background-color: #fcfdff; /* Een zeer lichte, bijna witte blauwtint */
     color: var(--text-color);
     margin: 0;
-    line-height: 1.7;
+    line-height: 1.8;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
+
 .container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
 }
-a { text-decoration: none; color: var(--primary-blue); }
 
-/* === HEADER SECTIE (HERO) === */
-.hero-header {
-    background: linear-gradient(45deg, var(--dark-blue), var(--primary-blue));
-    color: #fff;
-    padding: 80px 0;
-    text-align: center;
+a {
+    text-decoration: none;
+    color: var(--primary-blue);
+    transition: color 0.3s ease;
 }
+a:hover {
+    color: var(--dark-blue);
+}
+
+
+/* === Header Sectie (Hero) - Meer Impact === */
+.hero-header {
+    background: var(--dark-blue);
+    /* Subtiel patroon voor diepte */
+    background-image: linear-gradient(rgba(10, 37, 74, 0.95), rgba(10, 37, 74, 0.95)), url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40'%3E%3Cg fill-rule='evenodd'%3E%3Cg fill='%23007bff' fill-opacity='0.1'%3E%3Cpath d='M0 38.59l2.83-2.83 1.41 1.41L1.41 40H0v-1.41zM0 1.4l2.83 2.83 1.41-1.41L1.41 0H0v1.41zM38.59 40l-2.83-2.83 1.41-1.41L40 38.59V40h-1.41zM40 1.41l-2.83 2.83-1.41-1.41L38.59 0H40v1.41z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    color: #fff;
+    padding: 100px 0;
+    text-align: center;
+    border-bottom: 5px solid var(--primary-blue);
+}
+
 .hero-header h1 {
-    font-size: 3.5em;
+    font-size: 3.8em;
     font-weight: 700;
     margin: 0 0 15px 0;
-    letter-spacing: -1px;
+    letter-spacing: -1.5px;
 }
+
 .hero-header p {
-    font-size: 1.25em;
+    font-size: 1.3em;
     max-width: 700px;
-    margin: 0 auto 30px auto;
+    margin: 0 auto 40px auto;
     opacity: 0.9;
 }
+
 .cta-button {
-    background-color: #fff;
-    color: var(--primary-blue);
-    padding: 15px 35px;
-    border-radius: 30px;
+    background-color: var(--primary-blue);
+    color: #fff;
+    padding: 16px 40px;
+    border-radius: 50px; /* Perfect ronde zijkanten, zoals op Exclupower.nl */
     font-weight: 600;
     font-size: 1.1em;
     transition: all 0.3s ease;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-}
-.cta-button:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+    box-shadow: 0 5px 20px rgba(0, 123, 255, 0.3);
+    border: 2px solid var(--primary-blue);
 }
 
-/* === SECTIE STYLING === */
-.section { padding: 80px 0; }
+.cta-button:hover {
+    background-color: #fff;
+    color: var(--primary-blue);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0, 123, 255, 0.3);
+}
+
+
+/* === Algemene Sectie Styling === */
+.section { 
+    padding: 100px 0; 
+    border-bottom: 1px solid #eef2f7;
+}
+
 .section-title {
     text-align: center;
-    font-size: 2.8em;
+    font-size: 3em;
     font-weight: 700;
     color: var(--dark-blue);
     margin-bottom: 15px;
 }
+
 .section-subtitle {
     text-align: center;
-    font-size: 1.15em;
+    font-size: 1.2em;
     color: var(--text-muted);
     margin: 0 auto 60px auto;
     max-width: 750px;
 }
 
-/* === KENNISBANK GRID === */
+
+/* === Kennisbank Grid - Verfijnd Design === */
 .grid-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
-    gap: 30px;
+    gap: 35px;
 }
+
 .content-pillar {
     background-color: #fff;
-    border-radius: 12px;
-    padding: 30px;
+    border-radius: 16px; /* Meer afgerond */
+    padding: 35px;
     border: 1px solid var(--border-color);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
     transition: all 0.3s ease;
 }
+
 .content-pillar:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 30px rgba(0, 123, 255, 0.1);
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 15px 40px rgba(10, 37, 74, 0.1);
+    border-color: var(--primary-blue);
 }
+
 .content-pillar h2 {
-    font-size: 1.6em;
+    font-size: 1.7em;
     font-weight: 600;
     color: var(--dark-blue);
-    margin: 0 0 20px 0;
+    margin: 0 0 25px 0;
     display: flex;
     align-items: center;
 }
+
 .content-pillar h2 .fa-solid {
-    color: var(--primary-blue);
+    color: #fff;
+    background-color: var(--primary-blue);
     margin-right: 15px;
-    font-size: 0.9em;
+    font-size: 0.8em;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
 }
+
 .content-pillar ul {
     list-style: none;
     padding: 0;
     margin: 0;
 }
-.content-pillar li { margin-bottom: 12px; }
+
+.content-pillar li { 
+    margin-bottom: 10px; 
+}
+
 .content-pillar a {
     color: var(--text-color);
     font-weight: 500;
     display: block;
-    padding: 8px 12px;
+    padding: 10px 15px;
     border-radius: 8px;
-    transition: all 0.2s ease-in-out;
+    position: relative;
 }
+
 .content-pillar a:hover {
-    background-color: var(--light-blue);
-    color: var(--primary-blue);
-    padding-left: 18px;
-}
-.content-pillar a::before {
-    content: '›';
-    margin-right: 10px;
-    font-weight: bold;
+    background-color: var(--light-gray);
     color: var(--primary-blue);
 }
 
-/* === WAAROM EXCLUPOWER SECTIE === */
-.why-us-section { background-color: #fff; }
+.content-pillar a::before {
+    content: '→';
+    margin-right: 12px;
+    font-weight: bold;
+    color: var(--primary-blue);
+    opacity: 0; /* Verberg pijl standaard */
+    transition: opacity 0.3s ease;
+}
+.content-pillar a:hover::before {
+    opacity: 1; /* Toon pijl bij hover */
+}
+
+
+/* === Waarom Exclupower Sectie - Meer Visueel === */
+.why-us-section { 
+    background-color: #fff; 
+}
 .feature-card {
     text-align: center;
     padding: 20px;
 }
 .feature-card .icon {
-    font-size: 3em;
-    color: var(--primary-blue);
-    margin-bottom: 20px;
+    font-size: 2.5em;
+    color: #fff;
+    background: linear-gradient(45deg, var(--primary-blue), #00aaff);
+    width: 80px;
+    height: 80px;
+    line-height: 80px;
+    border-radius: 50%;
+    margin: 0 auto 25px auto;
+    box-shadow: 0 5px 15px rgba(0, 123, 255, 0.3);
 }
 .feature-card h3 {
-    font-size: 1.4em;
+    font-size: 1.5em;
     color: var(--dark-blue);
     margin-bottom: 10px;
 }
 
-/* === FOOTER === */
+
+/* === Footer - Meer detail === */
 .main-footer {
     background-color: var(--dark-blue);
     color: #fff;
-    padding: 60px 0 30px 0;
+    padding: 80px 0 40px 0;
     text-align: center;
 }
-.main-footer .logo { font-size: 1.8em; font-weight: 700; margin-bottom: 20px; }
-.main-footer p { opacity: 0.7; }
+.main-footer .logo { 
+    font-size: 2em; 
+    font-weight: 700; 
+    margin-bottom: 25px; 
+    color: #fff;
+}
+.main-footer p { 
+    opacity: 0.7; 
+    max-width: 500px;
+    margin: 0 auto 30px auto;
+}
